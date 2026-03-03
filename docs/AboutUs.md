@@ -20,15 +20,14 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 * Role: Project Advisor
 * Responsibilities: Integration, Ui, Coding, Rallier
 
-### Jane Doe
+### Tian Jiarui
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/tian-jiarui.png" width="200px">
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/trumantong8.md)]
+[[github](https://github.com/Tian-Jiarui)]
 
 * Role: Team Lead
-* Responsibilities: UI
+* Responsibilities: Deliverables and deadlines, Scheduling and tracking, Ui 
 
 ### Hong Tianyu
 
