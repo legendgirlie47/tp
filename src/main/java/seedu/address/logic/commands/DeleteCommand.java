@@ -26,13 +26,16 @@ public class DeleteCommand extends Command {
 
     public static final String MESSAGE_DELETE_PERSON_SUCCESS = "Deleted Person: %1$s";
 
-    private final Index targetIndex;
-
     public static final String MESSAGE_DELETE_CANCELLED =
             "Delete cancelled.";
-
+    private final Index targetIndex;
     private final ConfirmationInterface confirmationInterface;
 
+    /**
+     * Creates a DeleteCommand to delete the person at the specified {@code targetIndex}.
+     * @param targetIndex person's index.
+     * @param confirmationInterface interface to trigger confirmation.
+     */
     public DeleteCommand(Index targetIndex, ConfirmationInterface confirmationInterface) {
         this.targetIndex = targetIndex;
         this.confirmationInterface = confirmationInterface;
