@@ -59,6 +59,10 @@ public class NoteAddCommand extends Command {
         }
 
         Person personToEdit = lastShownList.get(index.getZeroBased());
+        String existingNote = personToEdit.getNotes().orElse("");
+        String updatedNote = existingNote.isEmpty()
+                ? note
+                : existingNote + "\n" + note;
         Person editedPerson = new Person(
                 personToEdit.getName(),
                 personToEdit.getPhone(),
@@ -66,7 +70,7 @@ public class NoteAddCommand extends Command {
                 personToEdit.getAddress(),
                 personToEdit.getTags(),
                 personToEdit.getFollowUpDate(),
-                java.util.Optional.of(note.trim()),
+                java.util.Optional.of(updatedNote),
                 personToEdit.getCircle()
         );
 
