@@ -4,14 +4,13 @@ import java.time.LocalDate;
 import java.util.Comparator;
 
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
+
 import seedu.address.model.person.Person;
-import javafx.scene.Node;
-import javafx.scene.control.Tooltip;
-import java.time.format.DateTimeFormatter;
 
 /**
  * An UI component that displays information of a {@code Person}.
@@ -47,11 +46,6 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label circleBadge;
 
-    private static void setShown(Node node, boolean shown) {
-        node.setVisible(shown);
-        node.setManaged(shown);
-    }
-
     /**
      * Creates a {@code PersonCard} with the given {@code Person} and index to display.
      */
@@ -65,7 +59,7 @@ public class PersonCard extends UiPart<Region> {
         String emailValue = person.getEmail().value;
 
         phone.setText("Phone: " + person.getPhone().value);
-        address.setText("Address: "+  (addressValue.equals("MISSING_ADDRESS") ? "-" : addressValue));
+        address.setText("Address: "+ (addressValue.equals("MISSING_ADDRESS") ? "-" : addressValue));
         email.setText(emailValue.equals("missing@email.empty") ? "-" : emailValue);
 
         followUpDate.getStyleClass().add("follow-up-date-value");
@@ -121,4 +115,10 @@ public class PersonCard extends UiPart<Region> {
                 .sorted(Comparator.comparing(tag -> tag.tagName))
                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
     }
+
+    private static void setShown(Node node, boolean shown) {
+        node.setVisible(shown);
+        node.setManaged(shown);
+    }
+
 }
