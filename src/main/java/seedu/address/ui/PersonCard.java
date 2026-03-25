@@ -9,7 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
-
 import seedu.address.model.person.Person;
 
 /**
@@ -59,7 +58,7 @@ public class PersonCard extends UiPart<Region> {
         String emailValue = person.getEmail().value;
 
         phone.setText("Phone: " + person.getPhone().value);
-        address.setText("Address: "+ (addressValue.equals("MISSING_ADDRESS") ? "-" : addressValue));
+        address.setText("Address: " + (addressValue.equals("MISSING_ADDRESS") ? "-" : addressValue));
         email.setText(emailValue.equals("missing@email.empty") ? "-" : emailValue);
 
         followUpDate.getStyleClass().add("follow-up-date-value");
