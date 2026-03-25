@@ -3,6 +3,7 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 
 import java.util.List;
+import java.util.Optional;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.ToStringBuilder;
@@ -70,7 +71,7 @@ public class NoteAddCommand extends Command {
                 personToEdit.getAddress(),
                 personToEdit.getTags(),
                 personToEdit.getFollowUpDate(),
-                java.util.Optional.of(updatedNote),
+                Optional.of(updatedNote),
                 personToEdit.getCircle()
         );
 
