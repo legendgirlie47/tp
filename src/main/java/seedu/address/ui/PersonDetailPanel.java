@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
+import seedu.address.model.person.Note;
 import seedu.address.model.person.Person;
 
 /**
@@ -37,7 +38,9 @@ public class PersonDetailPanel extends UiPart<Region> {
         email.setText(person.getEmail().value);
         address.setText(person.getAddress().value);
 
-        notes.setText(person.getNotes().orElse("-"));
+        notes.setText(person.getNotes()
+                .map(Note::toString)
+                .orElse("-"));
 
         followUpDate.setText(
                 person.getFollowUpDate().map(d -> d.value.toString()).orElse("-")
