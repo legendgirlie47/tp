@@ -155,6 +155,16 @@ Classes used by multiple components are in the `seedu.address.commons` package.
 
 This section describes some noteworthy details on how certain features are implemented.
 
+### Tag add feature
+
+Users can add tags to contacts for quick categorisation using the `tagadd` command. The implementation of this feature is shown in the sequence diagram below.
+
+#### The sequence diagram
+![Tag Add Sequence Diagram](images/TagSequenceDiagram.png)
+
+<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `TagAddCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
+</div>
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation
