@@ -19,7 +19,6 @@ public class TagRemoveCommandParser implements Parser<TagRemoveCommand> {
      *
      * @throws ParseException if the user input does not conform to the expected format
      */
-    @Override
     public TagRemoveCommand parse(String args) throws ParseException {
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_TAG);
 
