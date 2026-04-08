@@ -4,6 +4,7 @@ import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 
 import seedu.address.commons.core.index.Index;
+import seedu.address.logic.commands.TagAddCommand;
 import seedu.address.logic.commands.TagRemoveCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.tag.Tag;
@@ -32,7 +33,18 @@ public class TagRemoveCommandParser implements Parser<TagRemoveCommand> {
             throw new ParseException(MESSAGE_REMOVE_EXCESSIVE_TAGS);
         }
 
-        Index index = ParserUtil.parseIndex(argMultimap.getPreamble().trim());
+        // Check index is a numerical value
+        // If not, throw error
+        String preamble = argMultimap.getPreamble().trim();
+        int tempIndex;
+        try {
+            tempIndex = Integer.parseInt(preamble);
+        } catch (NumberFormatException e) {
+            throw new ParseException(
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, TagAddCommand.MESSAGE_USAGE));
+        }
+
+        Index index = Index.fromOneBased(tempIndex);
         Tag tag = ParserUtil.parseTag(argMultimap.getValue(PREFIX_TAG).get());
 
         return new TagRemoveCommand(tag, index);
