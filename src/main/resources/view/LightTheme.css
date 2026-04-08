@@ -145,6 +145,7 @@
 
 /* Only apply underline when it is a real email */
 .person-email-link {
+    -fx-text-fill: #0b63ce;
     -fx-underline: true;
 }
 
@@ -227,8 +228,7 @@
 .view-email-text {
     -fx-font-family: "Segoe UI";
     -fx-font-size: 15px;
-    -fx-text-fill: #0b63ce;
-    -fx-underline: true;
+    -fx-text-overrun: ellipsis;
 }
 
 .view-name-label {
@@ -236,5 +236,9 @@
     -fx-font-size: 20px;
     -fx-font-weight: bold;
     -fx-text-fill: #2f4156;
+}
+
+.view-field-empty {
+    -fx-underline: false;
 }
 
