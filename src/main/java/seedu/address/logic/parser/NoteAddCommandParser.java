@@ -30,6 +30,11 @@ public class NoteAddCommandParser implements Parser<NoteAddCommand> {
                     String.format(MESSAGE_INVALID_COMMAND_FORMAT, NoteAddCommand.MESSAGE_USAGE));
         }
 
+        if (notePrefixPosition > 0 && !Character.isWhitespace(args.charAt(notePrefixPosition - 1))) {
+            throw new ParseException(
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, NoteAddCommand.MESSAGE_USAGE));
+        }
+
         // preamble is everything before "note/"
         // noteText is everything after "note/"
         String preamble = args.substring(0, notePrefixPosition).trim();
@@ -49,12 +54,14 @@ public class NoteAddCommandParser implements Parser<NoteAddCommand> {
             throw new ParseException(Messages.MESSAGE_OOR_INDEX);
         }
 
+        Index index = Index.fromOneBased(rawInt);
+
+        // Index index = ParserUtil.parseIndex(preamble, NoteAddCommand.MESSAGE_USAGE);
+
         // Validate note is not empty
         if (noteText.isEmpty()) {
             throw new ParseException(MESSAGE_CONSTRAINTS);
         }
-
-        Index index = Index.fromOneBased(rawInt);
 
         // Validate the word count of the new input is <= MAX_CHAR_COUNT
         // Validating the combined total word count is inside NoteAddCommand.execute()

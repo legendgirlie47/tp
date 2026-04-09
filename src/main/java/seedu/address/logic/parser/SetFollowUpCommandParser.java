@@ -29,7 +29,8 @@ public class SetFollowUpCommandParser implements Parser<SetFollowUpCommand> {
                     SetFollowUpCommand.MESSAGE_USAGE));
         }
 
-        Index index = ParserUtil.parseIndex(argMultimap.getPreamble().trim());
+        Index index = ParserUtil.parseIndex(argMultimap.getPreamble().trim(), SetFollowUpCommand.MESSAGE_USAGE);
+
         FollowUpDate followUpDate = ParserUtil.parseFollowUpDate(
                 argMultimap.getValue(PREFIX_FOLLOW_UP_DATE).get());
 
