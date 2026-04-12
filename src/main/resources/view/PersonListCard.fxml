@@ -25,12 +25,15 @@
           <Region fx:constant="USE_PREF_SIZE" />
         </minWidth>
       </Label>
-      <Label fx:id="name" text="Name" styleClass="person-name-label" />
+      <Label fx:id="name" text="Name" styleClass="person-name-label" HBox.hgrow="NEVER" />
 
       <Label fx:id = "circleBadge"
              text = "client"
              styleClass= "circle-badge"
-             visible="false" managed="false"/>
+             visible="false" managed="false"
+             wrapText="false"
+             alignment="CENTER"
+             minWidth="70"/>
     </HBox>
 
     <VBox alignment="CENTER_LEFT" spacing="12">
