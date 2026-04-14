@@ -194,7 +194,7 @@ calls `handleViewPerson()` to display the selected contact's full details in a d
 
 While in View Mode, the selected contact is the only contact in the filtered list. Therefore, index-based commands should use index `1` to refer to the currently displayed contact.
 
-Running `add`, `list`, `delete`, `clear`, `find`, `remind`, or `circlefilter` exits View Mode and clears the detail panel. All other commands (e.g. `edit`, `note`, `followup`) keep the app in View Mode and refresh the detail panel with the latest contact details.
+Running `add`, `edit`, `list`, `delete`, `clear`, `find`, `remind`, or `circlefilter` exits View Mode and clears the detail panel. All other commands (e.g. `note`, `followup`) keep the app in View Mode and refresh the detail panel with the latest contact details.
 
 --------------------------------------------------------------------------------------------------------------------
 
